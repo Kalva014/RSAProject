@@ -203,29 +203,20 @@ int main()
 	string m;
 	char c;
 	cout << "Encryption(e) or Decryption(d)" << endl;
-	cin >> c;
-
+	cin >> e >> n >> c >>m;
+	
 	//cout << modInverse(5, 72);
 	
 	if (c == 'e')
 	{
-		cout << "Select the encryption value" << endl;
-		cin >> e;
-
-		cout << "And now your N" << endl;
-		cin >> n;
-
-		cout << "Input File Name: " << endl;
-		cin.ignore();
-		getline(cin, m);
-
+		/*
 		bool Echeck = checkE(e, n);
 		while (Echeck == false)
 		{
 			cout << "encryption value inccorrect input new encryption value" << endl;
 			cin >> e;
 			Echeck = checkE(e, n);
-		}
+		}*/
 
 		vector<char> charMessage = readFile(m);
 		vector<int> encriptKey = encript(charMessage, e, n);
