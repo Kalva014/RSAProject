@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <math.h>
 #include <cmath>
-
+#include <algorithm>
 using namespace std;
 
 vector<char> readFile(string m);
@@ -16,7 +16,7 @@ vector<int> encript(vector<char> c, int e, int n);
 vector<char> decript(vector<int> c, int e, int n);
 bool checkE(int e, int n);
 double getPhi(int n);
-int gcd(int a, int b);
+//int gcd(int a, int b);
 bool isPrime(int n);
 int modInverse(int a, int m);
 
@@ -180,7 +180,7 @@ double getPhi(int n)
 
 	return ret ;
 }
-int gcd(int a, int b)
+/*int gcd(int a, int b)
 {
 	if (a == b)
 	{
@@ -194,7 +194,7 @@ int gcd(int a, int b)
 	{
 		gcd(a - b, b);
 	}
-}
+}*/
 
 int main()
 {
@@ -224,38 +224,28 @@ int main()
 		{
 			cout << encriptKey.at(i) << endl;
 		}
-		ofstream myfile;
-		myfile.open("incrypted.txt");
-		for (int i = 0; i < encriptKey.size(); i++)
+		fstream myfile("incrypted.txt");
+		if (myfile.is_open())
 		{
-			if (i == encriptKey.size() - 1)
+			for (int i = 0; i < encriptKey.size(); i++)
 			{
-				myfile << encriptKey.at(i);
+				myfile << encriptKey.at(i) << " ";
 			}
-			else
-			{
-				myfile << encriptKey.at(i) + " ";
-			}
-
+			myfile.close();
 		}
-		myfile.close();
+		
 
 	}
 	else if (c == 'd')
 	{
-		cout << "Select the encryption value" << endl;
-		cin >> e;
-
-		cout << "And now your N" << endl;
-		cin >> n;
-
+		/*
 		bool Echeck = checkE(e, n);
 		while (Echeck == false)
 		{
 			cout << "encryption value inccorrect input new encryption value" << endl;
 			cin >> e;
 			Echeck = checkE(e, n);
-		}
+		}*/
 
 		vector<char> decriptKey;
 		vector<int> num; 
@@ -273,4 +263,3 @@ int main()
 	}
 	return 0;
 }
-
