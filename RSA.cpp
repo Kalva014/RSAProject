@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <math.h>
 #include <cmath>
-#include <algorithm>
+//#include <algorithm>
 using namespace std;
 
 vector<char> readFile(string m);
@@ -16,7 +16,7 @@ vector<int> encript(vector<char> c, int e, int n);
 vector<char> decript(vector<int> c, int e, int n);
 bool checkE(int e, int n);
 double getPhi(int n);
-//int gcd(int a, int b);
+int gcd(int a, int b);
 bool isPrime(int n);
 int modInverse(int a, int m);
 
@@ -180,7 +180,7 @@ double getPhi(int n)
 
 	return ret ;
 }
-/*int gcd(int a, int b)
+int gcd(int a, int b)
 {
 	if (a == b)
 	{
@@ -194,7 +194,7 @@ double getPhi(int n)
 	{
 		gcd(a - b, b);
 	}
-}*/
+}
 
 int main()
 {
